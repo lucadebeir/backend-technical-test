@@ -6,8 +6,9 @@ const calcul = require('./service/calculService')
 const { check, validationResult } = require('express-validator/check')
 
 const { matchedData } = require('express-validator/filter')
+
 router.get('/', (req, res) => {
-  res.render('index')
+  res.render('form')
 })
 
 router.post('/form/result', (req, res) => {
