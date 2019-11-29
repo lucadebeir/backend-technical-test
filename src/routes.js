@@ -1,7 +1,7 @@
 
 const express = require('express')
 const router = express.Router()
-const calcul = require('./calcul')
+const calcul = require('./service/calculService')
 
 const { check, validationResult } = require('express-validator/check')
 
