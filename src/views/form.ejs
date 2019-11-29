@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Form</title>
+  </head>
+
+  <div class="form-header">
+        <% if (Object.keys(errors).length === 0) { %>
+          <h2>Send us a message</h2>
+        <% } else { %>
+          <h2 class="errors-heading">Oops, please correct the following:</h2>
+          <ul class="errors-list">
+            <% Object.values(errors).forEach(error => { %>
+              <li><%= error.msg %></li>
+            <% }) %>
+          </ul>
+        <% } %>
+      </div>
+
+    <form method="post" action="/form">
+      <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+      <div class="form-field <%= errors.firstname ? 'form-field-invalid' : '' %>">
+        <label for="firstname">Firstname</label>
+        <textarea class="input" id="firstname" name="firstname" rows="4" autofocus><%= data.firstname %></textarea>
+        <% if (errors.message) { %>
+          <div class="error"><%= errors.firstname.msg %></div>
+        <% } %>
+      </div>
+      <div class="form-field <%= errors.lastname ? 'form-field-invalid' : '' %>">
+        <label for="lastname">Lastname</label>
+        <input class="input" id="lastname" name="lastname" type="text" value="<%= data.lastname %>" />
+        <% if (errors.lastname) { %>
+          <div class="error"><%= errors.lastname.msg %></div>
+        <% } %>
+      </div>
+      <div class="form-field <%= errors.annualSalary ? 'form-field-invalid' : '' %>">
+            <label for="annualSalary">Annual Salary</label>
+            <input class="input" id="annualSalary" name="annualSalary" type="number" value="<%= data.annualSalary %>" />
+            <% if (errors.annualSalary) { %>
+              <div class="error"><%= errors.annualSalary.msg %></div>
+            <% } %>
+        </div>
+        <div class="form-field <%= errors.superRate ? 'form-field-invalid' : '' %>">
+                <label for="superRate">Super Rate</label>
+                <input class="input" id="superRate" name="superRate" type="text" value="<%= data.superRate %>" />
+                <% if (errors.superRate) { %>
+                  <div class="error"><%= errors.superRate.msg %></div>
+                <% } %>
+              </div>
+              <div class="form-field <%= errors.paymentStartDate ? 'form-field-invalid' : '' %>">
+                    <label for="paymentStartDate">Payment Start Date</label>
+                    <input class="input" id="paymentStartDate" name="paymentStartDate" type="text" value="<%= data.paymentStartDate %>" />
+                    <% if (errors.paymentStartDate) { %>
+                      <div class="error"><%= errors.paymentStartDate.msg %></div>
+                    <% } %>
+                  </div>
+      <div class="form-actions">
+        <button class="btn" type="submit">Send</button>
+      </div>
+    </form>
+
+
+
+  </body>
+</html>
