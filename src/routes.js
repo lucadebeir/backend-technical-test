@@ -1,6 +1,7 @@
 
 const express = require('express')
 const router = express.Router()
+const calcul = require('./calcul')
 
 const { check, validationResult } = require('express-validator/check')
 
@@ -39,7 +40,7 @@ router.post('/form', [
       .isLength({ min: 1 })
     .withMessage('SuperRate is required')
     .trim(),
-    check('paymentStartDate')
+  check('paymentStartDate')
     .isLength({ min: 1 })
     .withMessage('PaymentStartDate is required')
     .trim()
@@ -53,6 +54,8 @@ router.post('/form', [
         })
       }
       const data = matchedData(req)
+      //const payPeriod = calcul.payPeriod(data.annualSalary,12)
+      //console.log('PayPeriod', payPeriod);
       console.log('Data: ', data);
       res.render("result.ejs", data);
   }
