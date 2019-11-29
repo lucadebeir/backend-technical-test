@@ -52,7 +52,7 @@
               </div>
               <div class="form-field <%= errors.paymentStartDate ? 'form-field-invalid' : '' %>">
                     <label for="paymentStartDate">Payment Start Date</label>
-                    <input class="input" id="paymentStartDate" name="paymentStartDate" type="text" value="<%= data.paymentStartDate %>" />
+                    <input class="input" id="paymentStartDate" name="paymentStartDate" type="month" value="<%= data.paymentStartDate %>" />
                     <% if (errors.paymentStartDate) { %>
                       <div class="error"><%= errors.paymentStartDate.msg %></div>
                     <% } %>

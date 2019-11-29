@@ -33,15 +33,14 @@ router.post('/form', [
     .withMessage('Lastname is required')
     .trim(),
   check('annualSalary')
-    .isLength({ min: 1 })
+    .isLength({ min: 0 })
     .withMessage('AnnualSalary is required')
     .trim(),
   check('superRate')
-      .isLength({ min: 1 })
-    .withMessage('SuperRate is required')
+    .isIn(["0","1","2","3","4","5","6","7","8","9","10","11","12"])
+    .withMessage('SuperRate is a percent, enter a value between 0 and 12')
     .trim(),
   check('paymentStartDate')
-    .isLength({ min: 1 })
     .withMessage('PaymentStartDate is required')
     .trim()
   ], (req, res) => {
@@ -54,10 +53,21 @@ router.post('/form', [
         })
       }
       const data = matchedData(req)
-      //const payPeriod = calcul.payPeriod(data.annualSalary,12)
-      //console.log('PayPeriod', payPeriod);
-      console.log('Data: ', data);
-      res.render("result.ejs", data);
+      const name = calcul.name(data.lastname,data.firstname);
+      const paymentStartDate = data.paymentStartDate;
+      const grossIncome = calcul.rounded(calcul.grossIncome(data.annualSalary,12));
+      const incomeTax = calcul.rounded(calcul.incomeTax(data.annualSalary));
+      const netIncome = calcul.rounded(calcul.netIncome(grossIncome,incomeTax));
+      const superAmount = calcul.rounded(calcul.superAmount(grossIncome,data.superRate));
+      const formData = {
+        name,
+        paymentStartDate,
+        grossIncome,
+        incomeTax,
+        netIncome,
+        superAmount
+      }
+      res.render("result.ejs", formData);
   }
 );
 
