@@ -1,6 +1,12 @@
-const grossIncome = new Function('a', 'b', 'return a / b');
+function grossIncome (current, lastIncome) {
+    if (lastIncome!=0) { 
+        return current / lastIncome
+    }
+};
 
-const name = new Function('a', 'b', 'return a + " " + b');
+function name (a,b) {
+    return (a + " " + b);
+};
 
 function incomeTax (a) {
     if (a <= 18200) {
@@ -21,16 +27,20 @@ function incomeTax (a) {
 }
 
 function rounded (a) {
-    return Math.round(a)
+    return Math.round(a);
 }
 
 function date(a) {
     return a;
 }
 
-const netIncome = new Function('a', 'b', 'return a - b');
+function netIncome(a,b) {
+    return (a - b);
+};
 
-const superAmount = new Function('a', 'b', 'return a*(b/100)');
+function superAmount(a,b) {
+    return a*(b/100);
+};
 
 exports.incomeTax = incomeTax;
 exports.rounded = rounded;

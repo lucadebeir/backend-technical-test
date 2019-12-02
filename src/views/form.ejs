@@ -8,7 +8,7 @@
 <body>
   <div class="form-header">
         <% if (Object.keys(errors).length === 0) { %>
-          <h2>Send us a message</h2>
+          <h2>Back-end Technical Test</h2>
         <% } else { %>
           <h2 class="errors-heading">Oops, please correct the following:</h2>
           <ul class="errors-list">
@@ -23,7 +23,7 @@
       <input type="hidden" name="_csrf" value="<%= csrfToken %>">
       <div class="form-field <%= errors.firstname ? 'form-field-invalid' : '' %>">
         <label for="firstname">Firstname</label>
-        <textarea class="input" id="firstname" name="firstname" rows="4" autofocus><%= data.firstname %></textarea>
+        <input class="input" id="firstname" name="firstname"><%= data.firstname %></textarea>
         <% if (errors.message) { %>
           <div class="error"><%= errors.firstname.msg %></div>
         <% } %>

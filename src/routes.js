@@ -38,14 +38,16 @@ router.post('/form', [
     .withMessage('Lastname is required')
     .trim(),
   check('annualSalary')
-    .isLength({ min: 0 })
+    .not().isEmpty()
+    .isLength({ min: 4 })
     .withMessage('AnnualSalary is required')
     .trim(),
-  check('superRate')
+  check('superRate','The super-rate must be contain a number between 0 and 12')
     .isIn(["0","1","2","3","4","5","6","7","8","9","10","11","12"])
     .withMessage('SuperRate is a percent, enter a value between 0 and 12')
     .trim(),
-  check('paymentStartDate')
+  check('paymentStartDate','Select the month payment start')
+    .not().isEmpty()
     .withMessage('PaymentStartDate is required')
     .trim()
   ], (req, res) => {

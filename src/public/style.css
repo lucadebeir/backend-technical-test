@@ -19,6 +19,18 @@ h2 {
   font-size: 20px;
 }
 
+div#result {
+  width: 100%;
+  width: 100%;
+  max-width: 400px;
+  padding: 20px;
+  background: #f8f8f8;
+  border: 1px solid rgba(0,0,0,.1);
+  border-color: rgba(0,0,0,.05) rgba(0,0,0,.08) rgba(0,0,0,.1);
+  border-radius: 3px;
+  box-shadow: 0 3px 4px rgba(0,0,0,.05);
+}
+
 .form-header {
   width: 100%;
   max-width: 400px;

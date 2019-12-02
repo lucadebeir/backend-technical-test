@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="/style.css" type="text/css" />
     <title>Result form</title>
 </head>
 <body>
     <h2>Your form has successfully sent</h2>
-    <div>
-        <p><%= name %></p>
-        <p><%= paymentStartDate %></p>
-        <p><%= grossIncome %></p>
-        <p><%= incomeTax %></p>
-        <p><%= netIncome %></p>
-        <p><%= superAmount %></p>
+    <div id="result">
+        <p style="font-style:italic">Name : <%= name %>
+        <p style="font-style:italic">Date Payment Start : <%= paymentStartDate %></p>
+        <p style="font-style:italic">Gross Income : <%= grossIncome %></p>
+        <p style="font-style:italic">Income Tax : <%= incomeTax %></p>
+        <p style="font-style:italic">Net Income : <%= netIncome %></p>
+        <p style="font-style:italic">Super Amount : <%= superAmount %></p>
     </div>
     <br>
     <div class="form-actions">
