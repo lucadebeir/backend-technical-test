@@ -13,6 +13,8 @@
 
 ## How to launch the test
 
-1) Go to the folder of the cloned project from your device
+1) Go to the folder of the cloned project from your device in two differents terminal
 
-2) Type the command "npm test"
+2) In the first terminal, type the command "npm start"
+
+2) In the second, type the command "npm test"
