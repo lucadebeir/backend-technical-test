@@ -8,7 +8,11 @@ const { check, validationResult } = require('express-validator/check')
 const { matchedData } = require('express-validator/filter')
 
 router.get('/', (req, res) => {
-  res.render('form')
+  res.render('form', {
+    data: {},
+    errors: {},
+    csrfToken: req.csrfToken()
+  })
 })
 
 router.post('/form/result', (req, res) => {
