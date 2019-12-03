@@ -54,9 +54,9 @@ describe('Test function of calculService with good data', function () {
 //WRONG RESULT
 describe('Test function of calculService with wrong data', function () {
   it('Test name', function() {
-    var name = calculService.name(testwrongData.lastname, testwrongData.firstname);
+    var fullName = calculService.fullName(testwrongData.lastname, testwrongData.firstname);
     
-    expect(name).not.to.equal("Debeir Luca");
+    expect(fullName).not.to.equal("Debeir Luca");
   })
 
   it('Test gross-income', function () {
@@ -91,9 +91,9 @@ describe('Test function of calculService with wrong data', function () {
 //TEST FUNCTIONS MISSING ONE ARGUMENT
 describe('Test function of calculService with missing one argument', function () {
   it('Test name', function() {
-    var name = calculService.name(testgoodData.firstname);
+    var fullName = calculService.fullName(testgoodData.firstname);
     
-    expect(name).not.to.equal("Debeir Luca");
+    expect(fullName).not.to.equal("Debeir Luca");
   })
 
   it('Test gross-income', function () {

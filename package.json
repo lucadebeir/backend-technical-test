@@ -1,5 +1,5 @@
 {
-  "name": "node-forms",
+  "name": "backend-technical-test",
   "version": "1.0.0",
   "description": "",
   "main": "src/server.js",
@@ -12,18 +12,10 @@
   "license": "ISC",
   "dependencies": {
     "chai": "^4.2.0",
-    "cookie-parser": "^1.4.3",
-    "csurf": "^1.9.0",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
-    "express-flash": "^0.0.2",
-    "express-layout": "^0.1.0",
-    "express-session": "^1.15.6",
     "express-validator": "^4.3.0",
-    "helmet": "^3.10.0",
-    "mocha": "^6.2.2",
-    "multer": "^1.3.0",
-    "request": "^2.88.0"
+    "mocha": "^6.2.2"
   },
   "devDependencies": {
     "nodemon": "^1.14.11"
