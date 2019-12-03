@@ -18,9 +18,9 @@ const testwrongData = {
 //GOOD DATA
 describe('Test function of calculService with good data', function () {
     it('Test name', function() {
-      var name = calculService.name(testgoodData.lastname, testgoodData.firstname);
+      var fullName = calculService.fullName(testgoodData.lastname, testgoodData.firstname);
       
-      expect(name).to.equal("Debeir Luca");
+      expect(fullName).to.equal("Debeir Luca");
     })
 
     it('Test gross-income', function () {
