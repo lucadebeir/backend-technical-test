@@ -37,8 +37,8 @@ router.post('/form', [
     .trim(),
   check('annualSalary')
     .not().isEmpty()
-    .isLength({ min: 4 })
-    .withMessage('AnnualSalary is required  and it\'s a number')
+    .isLength({ min: 3 })
+    .withMessage('AnnualSalary is required  and it\'s a number > 99')
     .trim(),
   check('superRate','The super-rate must be contain a number between 0 and 12')
     .isIn(["0","1","2","3","4","5","6","7","8","9","10","11","12"])
